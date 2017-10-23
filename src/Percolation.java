@@ -1,24 +1,29 @@
+import edu.princeton.cs.algs4.QuickFindUF;
+
 public class Percolation {
     
     private int[][] grid;
+    private QuickFindUF grid;
+    private int dimension;
     
     
     public Percolation(int n) throws IllegalArgumentException {
         if (n <= 0) {
             throw new java.lang.IllegalArgumentException();
         }
-        grid = new int[n][n];
-        for (int i = 0; i < grid.length; i++) {
-            for(int j = 0; j < grid[i].length; j++) {
-                grid[i][j] = 0;
-            }
-        }
+        grid = new QuickFindUF(n);
+        dimension = n;
 
     }             
     public void open(int row, int col) {
-        int arrayRow = row - 1;
-        int arrayCol = col - 1;
-        grid[arrayRow][arrayCol] = 1;
+        if (! isOpen(row, col)) {
+            int position = (row - 1) * dimension + col - 1;
+            grid
+            
+            
+        }
+//        grid.find()
+//        grid[arrayRow][arrayCol] = 1;
         
     }
     public boolean isOpen(int row, int col)  {
